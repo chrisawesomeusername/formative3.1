@@ -1,0 +1,19 @@
+{
+  "name": "formative3.1",
+  "version": "1.0.0",
+  "description": "formative3.1(started this at home)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chris",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "grunt": "^1.0.4",
+    "jquery": "^3.4.1",
+    "jquery.js": "0.0.2-security",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1"
+  }
+}
