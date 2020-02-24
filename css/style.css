@@ -1,3 +1,6 @@
-
+.scroll-menu {
+  max-height: 200px;
+  overflow: hidden;
+}
 
 /*# sourceMappingURL=style.css.map */

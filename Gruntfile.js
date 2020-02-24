@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     watch: {
       all: {
         files: ['sass/style.scss','css/style.css','js/script.js'],
-        tasks: ['sass','csslint','jshint','imagemin']
+        tasks: ['sass','csslint','jshint']
       },
     },// end watch
     sass: {                              // Task
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  // grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 
