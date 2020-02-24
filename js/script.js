@@ -2,7 +2,7 @@
 
 console.log('formative3.1 news api');
 
-$(document).ready(function(){
+
 //   $('body').click(function(){
 //   $(this).css('color','white');
 // });
@@ -247,27 +247,47 @@ var categorys = [{
 }];
 
 
+
+$(document).ready(function(){
+populateCountryList();
+populateCategoryList();
+
+function populateCountryList(){
+  for (var j = 0; j < countrys.length; j++) {
+    document.getElementById('countrySort').innerHTML +=
+    '<a class="dropdown-item" href="#">' + countrys[j].name + '</a>';
+  }
+}
+
+function populateCategoryList(){
+  for (var i = 0; i < categorys.length; i++) {
+    document.getElementById('categorySort').innerHTML +=
+    '<a class="dropdown-item" href="#">' + categorys[i].name + '</a>';
+  }
+}
+
 buildUrl();
 
+//Search Function
 document.getElementById('searchBtn').addEventListener('click', function(){
   var searchValue = document.getElementById('searchValue').value;
   console.log(searchValue);
   buildUrl();
+});
 
-})
+
 function buildUrl(){
   var baseUrl = 'http://newsapi.org/v2/top-headlines?';
   console.log(baseUrl);
   // if (category != 0 && category != undefined)baseUrl += 'category=' + category + '&';
   // if (country != 0 && country != undefined)baseUrl += 'country=' + country + '&';
-  if (searchValue != "[object HTMLInputElement]")baseUrl += 'q=' + searchValue + '&';
-  console.log(baseUrl);
+  // if (searchValue != "[object HTMLInputElement]")baseUrl += 'q=' + searchValue + '&';
+  // console.log(baseUrl);
   if (baseUrl === 'http://newsapi.org/v2/top-headlines?')baseUrl += 'country=nz&';
   console.log(baseUrl);
   baseUrl += 'apiKey=' + myKey;
-
   console.log(baseUrl);
-  printUrl(baseUrl)
+  printUrl(baseUrl);
 }
 
 function printUrl(url){
@@ -277,54 +297,36 @@ function printUrl(url){
     data :'json',
     success:function(data){
       console.log(data);
-      var i;
-      for (i = 0; i < data.articles.length; i++) {
+      for (var i = 0; i < data.articles.length; i++) {
         document.getElementById('result').innerHTML +=
           '<div class="card border-0 shadow-sm p-3 mb-5 bg-white rounded">' +
             '<img src="' + data.articles[i].urlToImage + '" class="card-img-top" alt="..">' +
             '<div class="card-body">' +
-            '<h5 class="card-title">' + data.articles[i].title + '</h5>' +
-            '<p class="card-text">' + data.articles[i].description + '</p>' +
+              '<h5 class="card-title">' + data.articles[i].title + '</h5>' +
+              '<p class="card-text">' + data.articles[i].description + '</p>' +
+            '</div>' +
           '</div>';
       }
     },
     error:function(){
     console.log('error');
     }
-
   });//ajax
 }
 
+document.getElementById('devSec').addEventListener('click', function(){
+  document.getElementById('result').innerHTML =
+    '<div class="card w-100">' +
+      '<div class="card-header">Chris Brown' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<p>Web and UX design student at Yoobee colleges 2020</p>' +
+      '</div>' +
+    '</div>';
+});
 
-
-// document.getElementById('searchBtn').addEventListener('click', function(){
-//   var searchValue = document.getElementById('searchValue').value;
-//
-//   $.ajax({
-//     url : `http://newsapi.org/v2/everything?q=${searchValue}&apiKey=${myKey}`,
-//     type :'GET',
-//     data :'json',
-//     success:function(data){
-//       console.log(data);
-//       var i;
-//       for (i = 0; i < data.articles.length; i++) {
-//         document.getElementById('result').innerHTML =
-//           '<div class="card border-0 shadow-sm p-3 mb-5 bg-white rounded">' +
-//             '<img src="' + data.articles[i].urlToImage + '" class="card-img-top" alt="..">' +
-//             '<div class="card-body">' +
-//             '<h5 class="card-title">' + data.articles[i].title + '</h5>' +
-//             '<p class="card-text">' + data.articles[i].description + '</p>' +
-//           '</div>';
-//       }
-//     },
-//     error:function(){
-//     console.log('error');
-//     }
-//
-//   });//ajax
-
-// });
-
-
-
+document.getElementById('newsSec').addEventListener('click', function(){
+  document.getElementById('result').innerHTML = ' ';
+  buildUrl();
+});
 });

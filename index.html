@@ -13,31 +13,32 @@
       </div>
       <!-- NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <a class="navbar-brand" href="#">News</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Developer Section</a>
+              <a id="newsSec" class="nav-link" href="#">News</a>
             </li>
           </ul>
-          <div class="dropdown show mr-4">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a id="devSec" class="nav-link" href="#">Developer Section</a>
+            </li>
+          </ul>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown show mr-4">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort By Country</a>
+            <div id="countrySort" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            </div>
+          </div>
+          <div class="dropdown show mr-4">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort By Category</a>
+            <div id="categorySort" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             </div>
           </div>
           <form class="form-inline my-2 my-lg-0">
-            <input id="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button id="searchBtn" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            <input id="searchValue" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
+            <button id="searchBtn" class="btn btn-outline-dark my-2 my-sm-0" >Search</button>
           </form>
 
         </div>
@@ -52,8 +53,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/config.json">
-    </script>
+    <script src="js/config.json"></script>
     <script src="js/script.js" charset="utf-8"></script>
 
   </body>
